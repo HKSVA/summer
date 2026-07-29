@@ -39,8 +39,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,26,20,0.95);backdrop-fi
 .exclusive-banner{display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(232,130,10,0.1);border:1px solid rgba(232,130,10,0.3);color:#f0a050;font-size:12.5px;font-weight:600;padding:9px 18px;text-align:center;max-width:max-content;margin:0 auto 22px;border-radius:10px;}
 
 .coach-photo-block{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:8px;}
-.coach-photo{width:220px;height:220px;border-radius:18px;overflow:hidden;border:3px solid rgba(200,230,60,0.35);box-shadow:0 0 0 6px rgba(200,230,60,0.07);}
-.coach-photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%;}
+.coach-photo{width:120px;height:120px;border-radius:50%;overflow:hidden;border:3px solid rgba(200,230,60,0.35);box-shadow:0 0 0 6px rgba(200,230,60,0.07);}
+.coach-photo img{width:100%;height:100%;object-fit:cover;}
 
 .guideline-box{background:rgba(200,230,60,0.06);border:1px solid rgba(200,230,60,0.22);border-radius:var(--radius);padding:22px 24px;margin-bottom:32px;text-align:center;}
 .guideline-title{font-family:'Big Shoulders Display',sans-serif;font-size:18px;font-weight:900;letter-spacing:1px;color:var(--lime);margin-bottom:10px;}
@@ -63,9 +63,6 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,26,20,0.95);backdrop-fi
 .info-text{font-size:14px;color:var(--text);line-height:1.8;opacity:0.88;}
 .info-text p{margin-bottom:10px;}
 .info-text p:last-child{margin-bottom:0;}
-.info-text .en{display:block;font-size:12.5px;color:var(--text-muted);font-style:italic;margin-top:3px;line-height:1.6;}
-.followup-note{margin-top:14px;padding:12px 14px;background:rgba(232,130,10,0.08);border:1px solid rgba(232,130,10,0.25);border-radius:10px;font-size:12px;color:#f0a050;line-height:1.7;}
-.followup-note .en{color:#e0a878;font-style:italic;opacity:0.85;}
 
 .meta-list{display:flex;flex-direction:column;gap:12px;}
 .meta-row{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text);}
@@ -103,13 +100,6 @@ footer a{color:var(--lime);text-decoration:none;}
 .btn-form-primary{width:100%;padding:14px 20px;border-radius:99px;background:var(--lime);color:#0a1a14;font-weight:700;font-size:15px;cursor:pointer;border:none;font-family:'Outfit',sans-serif;transition:all 0.2s;margin-top:6px;}.btn-form-primary:hover{background:#d8f040;}
 .btn-form-primary:disabled{background:var(--text-muted);cursor:not-allowed;}
 
-.date-check-list{display:flex;flex-direction:column;gap:8px;}
-.date-check-row{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:11px 14px;cursor:pointer;transition:border-color 0.2s,background 0.2s;}
-.date-check-row:hover{border-color:rgba(200,230,60,0.3);}
-.date-check-row input[type="checkbox"]{width:18px;height:18px;accent-color:var(--lime);cursor:pointer;flex-shrink:0;}
-.date-check-row span{font-size:14px;color:var(--text);}
-.date-check-note{font-size:11.5px;color:var(--text-muted);margin-top:6px;}
-
 @media(max-width:640px){
   nav{padding:0 18px;}
   .hero{padding:44px 18px 28px;}
@@ -131,11 +121,11 @@ footer a{color:var(--lime);text-decoration:none;}
 
 <section class="hero">
   <p class="hero-eyebrow">SCHOOL OF VOCAL ARTISTRY · SUMMER 2026</p>
-  <h1 class="hero-title">Therapeutic Sound<br><em>音樂治療 × 自我探索</em></h1>
+  <h1 class="hero-title">Therapeutic Sound<br><em>SVA 學生免費體驗課</em></h1>
   <p class="hero-sub">音樂治療 × 自我探索 · 導師 Tim Sung</p>
   <div class="free-banner">
     <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
-    免費 3 課網課 · FREE 3-Session Webinar Series
+    SVA 學生免費體驗課 · FREE Session for SVA Students
   </div>
 </section>
 
@@ -148,6 +138,9 @@ footer a{color:var(--lime);text-decoration:none;}
 
   <div class="video-block">
     <div class="video-frame">
+      <video controls playsinline style="width:100%;height:100%;object-fit:cover;display:block;" poster="">
+        <source src="tim-intro.mp4" type="video/mp4">
+      </video>
       <!--
         將剪好嘅 9:16 mp4 用 base64 embed 喺呢度，取代下面個 placeholder div：
         <video controls playsinline preload="metadata">
@@ -170,21 +163,11 @@ footer a{color:var(--lime);text-decoration:none;}
 
   <div class="info-grid">
     <div class="info-card">
-      <p class="info-card-title">課程介紹 Course Introduction</p>
+      <p class="info-card-title">課程介紹</p>
       <div class="info-text">
-        <p>Tim 過去一年在英國進修音樂治療，即將於今年暑假期回港！他整合了過去一年的學習，為 SVA 同學設計了《音樂治療 × 自我探索》課程，和大家一起探討：「如何以自己的聲音和音樂做到自我的探索。」
-        <span class="en">Tim has spent the past year studying Music Therapy in the UK and is returning to Hong Kong this summer! Drawing on a year of study, he has designed "Music Therapy × Self-Exploration" for SVA students — exploring together how we can use our own voice and music to discover ourselves.</span></p>
-
-        <p>在 3 節課程裡，每位參加者都可在安全及保密的環境下，以音樂、歌唱或單純去感受。
-        <span class="en">Across 3 sessions, each participant can use music, singing, or simply feel and be present — all within a safe and confidential environment.</span></p>
-
-        <p>本系列由 Tim Sung 主講，帶你認識音樂治療的基本概念、學術根據及實際應用。適合有興趣了解 Therapeutic Sound 及音樂治療的朋友，無需任何音樂基礎。
-        <span class="en">This series is led by Tim Sung, introducing the core concepts, academic foundations, and real-world applications of music therapy. Suitable for anyone curious about Therapeutic Sound and music therapy — no musical background required.</span></p>
-      </div>
-
-      <div class="followup-note">
-        *同學可以報名8月於 SVA STUDIO 的面授課，時間為星期五晚7:30pm。詳情會於7月中公佈。
-        <span class="en">*You may apply for the in-person course at SVA Studio this August — every Friday 7:30pm. Details to be announced mid-July.</span>
+        <p>Tim 過去一年在英國進修音樂治療，即將於今年暑假期回港！他整合了過去一年的學習，為 SVA 同學設計了《音樂治療 × 自我探索》課程，和大家一起探討：「如何以自己的聲音和音樂做到自我的探索。」</p>
+        <p>在 2 節課程裡，每位參加者都可在安全及保密的環境下，以音樂、歌唱或單純去感受。</p>
+        <p>本系列由 Tim Sung 主講，帶你認識音樂治療的基本概念、學術根據及實際應用。適合有興趣了解 Therapeutic Sound 及音樂治療的朋友，無需任何音樂基礎。</p>
       </div>
     </div>
 
@@ -192,37 +175,34 @@ footer a{color:var(--lime);text-decoration:none;}
       <p class="info-card-title">課程詳情</p>
       <div class="meta-list">
         <div class="meta-row">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="14" height="10" rx="1.5"/><path d="M11 7l3-2v6l-3-2"/></svg>
-          網上進行（Google Meet）
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2C5.8 2 4 3.8 4 6c0 3.3 4 8 4 8s4-4.7 4-8c0-2.2-1.8-4-4-4z"/><circle cx="8" cy="6" r="1.5"/></svg>
+          新蒲崗校舍
         </div>
         <div class="meta-row">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
-          共 3 課，每課約 1 小時，7:30pm
+          每課約 1–1.5 小時，7:30pm
         </div>
         <div class="meta-row">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2C5.8 2 4 3.8 4 6c0 3.3 4 8 4 8s4-4.7 4-8c0-2.2-1.8-4-4-4z"/><circle cx="8" cy="6" r="1.5"/></svg>
-          課程費用全免 · FREE ADMISSION
-        </div>
-        <div class="meta-row" style="color:#f0a050;">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="color:#f0a050;"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M5 2v2M11 2v2M2 7h12"/><path d="M5.5 10l1.5 1.5 3.5-3.5"/></svg>
-          截止報名：7月1日
+          免費，無需付款
         </div>
       </div>
       <br>
       <p class="info-card-title">課堂時間</p>
+      <div style="font-size:12px;color:var(--text-muted);margin-bottom:8px;">可揀選 1 堂出席 · Choose 1 session to attend</div>
       <div class="session-list">
-        <div class="session-row"><span class="session-num">1</span>7月3日（五）7:30pm</div>
-        <div class="session-row"><span class="session-num">2</span>7月10日（五）7:30pm</div>
-        <div class="session-row"><span class="session-num">3</span>7月17日（五）7:30pm</div>
+        <div class="session-row"><span class="session-num">1</span>8月5日（三）7:30pm</div>
+        <div class="session-row"><span class="session-num">2</span>8月7日（五）7:30pm</div>
       </div>
+      <div style="margin-top:10px;font-size:12px;color:var(--text-muted);">額滿即止 · Limited spots</div>
     </div>
   </div>
 
   <div class="guideline-box">
     <div class="guideline-title">WE LISTEN · WE DON'T JUDGE</div>
     <div class="guideline-text">
-      課程要求：BE OPEN-MINDED。<br>
-      請把課堂內容保密，共同建立一個互相支持及聆聽的空間。
+      課程唯一要求：We listen, we don't judge。<br>
+      同學把課堂內容保密，共同建立一個互相支持及聆聽的空間。
     </div>
   </div>
 
@@ -247,7 +227,7 @@ footer a{color:var(--lime);text-decoration:none;}
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">✕</button>
     <div class="modal-title">免費報名</div>
-    <div class="modal-sub">Therapeutic Sound · 音樂治療 × 自我探索（3課網課）</div>
+    <div class="modal-sub">Therapeutic Sound · SVA 學生免費體驗課 · 選擇1堂出席</div>
     <div class="free-tag-modal">
       <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
       免費活動 · 無需付款
@@ -258,17 +238,19 @@ footer a{color:var(--lime);text-decoration:none;}
       <div class="form-group"><label class="form-label">電話 Phone *</label><input class="form-input" id="fi-phone" type="tel" placeholder="e.g. 9123 4567"></div>
     </div>
     <div class="form-group"><label class="form-label">電郵 Email *</label><input class="form-input" id="fi-email" type="email" placeholder="your@email.com"></div>
-
     <div class="form-group">
-      <label class="form-label">出席日期（請盡量出席全部）</label>
-      <div class="date-check-list">
-        <label class="date-check-row"><input type="checkbox" id="date-1" value="7/3 (Fri)" checked> <span>7月3日（五）7:30pm</span></label>
-        <label class="date-check-row"><input type="checkbox" id="date-2" value="7/10 (Fri)" checked> <span>7月10日（五）7:30pm</span></label>
-        <label class="date-check-row"><input type="checkbox" id="date-3" value="7/17 (Fri)" checked> <span>7月17日（五）7:30pm</span></label>
+      <label class="form-label">選擇日期 Select Session *</label>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:6px;">
+        <label style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 14px;cursor:pointer;font-size:14px;color:var(--text);" id="session-label-1">
+          <input type="radio" name="session" value="8月5日（三）7:30pm" id="session1" onchange="highlightSession()" style="accent-color:var(--lime);width:16px;height:16px;">
+          <span>8月5日（三）7:30pm — 新蒲崗校舍</span>
+        </label>
+        <label style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 14px;cursor:pointer;font-size:14px;color:var(--text);" id="session-label-2">
+          <input type="radio" name="session" value="8月7日（五）7:30pm" id="session2" onchange="highlightSession()" style="accent-color:var(--lime);width:16px;height:16px;">
+          <span>8月7日（五）7:30pm — 新蒲崗校舍</span>
+        </label>
       </div>
-      <div class="date-check-note">3節課程內容連貫，建議盡量出席全部。如有特殊情況請於備註說明。</div>
     </div>
-
     <div class="form-group"><label class="form-label">備註 Remarks</label><textarea class="form-textarea" id="fi-note" placeholder="Any questions? 有任何問題？"></textarea></div>
 
     <button class="btn-form-primary" id="submit-btn" onclick="submitForm()">確認報名 Submit</button>
@@ -276,6 +258,17 @@ footer a{color:var(--lime);text-decoration:none;}
 </div>
 
 <script>
+function highlightSession() {
+  document.querySelectorAll('[id^="session-label-"]').forEach(el => {
+    el.style.borderColor = 'rgba(255,255,255,0.1)';
+    el.style.background = 'rgba(255,255,255,0.04)';
+  });
+  const checked = document.querySelector('input[name="session"]:checked');
+  if (checked) {
+    checked.closest('label').style.borderColor = 'rgba(200,230,60,0.5)';
+    checked.closest('label').style.background = 'rgba(200,230,60,0.07)';
+  }
+}
 function openModal(){
   document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -293,22 +286,15 @@ async function submitForm(){
   const phone = document.getElementById('fi-phone').value.trim();
   const email = document.getElementById('fi-email').value.trim();
   const note  = document.getElementById('fi-note').value.trim();
+  const sessionEl = document.querySelector('input[name="session"]:checked');
+  const session = sessionEl ? sessionEl.value : '';
 
-  const dateBoxes = [
-    document.getElementById('date-1'),
-    document.getElementById('date-2'),
-    document.getElementById('date-3')
-  ];
-  const selectedDates = dateBoxes.filter(d => d.checked).map(d => d.value);
-
-  if(!name || !phone || !email){
+  if(!name || !phone || !email || !session){
+    alert('請填寫所有必填項目並選擇日期 Please fill in all fields and select a session.');
+    return;
+  }
     alert('請填寫所有必填項目 Please fill in all required fields.');
-    return;
-  }
-  if(selectedDates.length === 0){
-    alert('請至少選擇一個出席日期 Please select at least one attendance date.');
-    return;
-  }
+
 
   const btn = document.getElementById('submit-btn');
   btn.disabled = true;
@@ -316,12 +302,12 @@ async function submitForm(){
 
   const data = {
     name, phone, email,
-    course: 'Therapeutic Sound 音樂治療 × 自我探索（3課網課）',
+    course: 'Therapeutic Sound SVA 學生免費體驗課',
+    session: session,
     status: 'SVA Student Exclusive · Free Webinar Series',
-    attendance: selectedDates.join(', '),
-    remarks: note,
+    remarks: (note ? note + ' | ' : '') + '選堂：' + session + ' · 新蒲崗校舍 · 額滿即止',
     type: 'workshop',
-    sheetTab: 'TherapeuticSound'
+    sheetTab: 'Workshop'
   };
 
   try {
